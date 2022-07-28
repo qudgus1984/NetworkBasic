@@ -9,6 +9,7 @@ import UIKit
 
 class LottoViewController: UIViewController {
     
+
     @IBOutlet weak var numberTextField: UITextField!
     // @IBOutlet weak var lottoPickerView: UIPickerView!
     var lottoPickerView = UIPickerView()
@@ -23,8 +24,13 @@ class LottoViewController: UIViewController {
 
         lottoPickerView.delegate = self
         lottoPickerView.dataSource = self
+        
     }
     
+
+    @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
 }
 
 extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -39,6 +45,8 @@ extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         numberTextField.text = "\(numberList[row])회차"
+        view.endEditing(true)
+
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -46,3 +54,5 @@ extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
 }
+
+

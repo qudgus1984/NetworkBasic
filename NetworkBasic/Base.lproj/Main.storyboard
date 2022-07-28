@@ -114,6 +114,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZXK-W1-DD3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="veF-8L-3D1" firstAttribute="leading" secondItem="ZXK-W1-DD3" secondAttribute="leading" constant="20" id="6Ro-jf-M4h"/>
                             <constraint firstItem="O2m-mG-y93" firstAttribute="top" secondItem="ZXK-W1-DD3" secondAttribute="top" constant="20" id="BSX-wb-Izh"/>
@@ -123,12 +124,20 @@
                             <constraint firstItem="ZXK-W1-DD3" firstAttribute="trailing" secondItem="O2m-mG-y93" secondAttribute="trailing" constant="20" id="rUU-tg-spC"/>
                             <constraint firstItem="veF-8L-3D1" firstAttribute="centerY" secondItem="x1A-7l-2xx" secondAttribute="centerY" id="yvC-Uc-Nne"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Yg9-Cw-zKt" appends="YES" id="Y0z-QJ-p4c"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="numberTextField" destination="O2m-mG-y93" id="zii-bb-yQx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bwi-Ia-a9Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Yg9-Cw-zKt">
+                    <connections>
+                        <action selector="tapGesture:" destination="av9-ST-F5V" id="9v1-8L-cBP"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="837.68115942028987" y="65.625"/>
         </scene>
@@ -197,13 +206,29 @@
                                     <constraint firstAttribute="height" constant="44" id="6Mg-6I-nxx"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="새로고침" id="KyY-lh-zPC"/>
+                                    <barButtonItem systemItem="stop" id="KyY-lh-zPC"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="HS7-sg-K1n"/>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="kf3-Jm-O4y"/>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="aQW-Et-u6z"/>
-                                    <barButtonItem title="Item" id="ofx-cR-GFg"/>
+                                    <barButtonItem image="arrow.left" catalog="system" id="ofx-cR-GFg">
+                                        <connections>
+                                            <action selector="gobackButtonClicked:" destination="3e6-eW-R5X" id="Ap5-EE-RWK"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="s5c-Eh-uLl"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="3Jv-cD-LNF"/>
+                                    <barButtonItem systemItem="refresh" id="sSP-lL-bNJ">
+                                        <connections>
+                                            <action selector="reloadButtonClicked:" destination="3e6-eW-R5X" id="usG-r7-lv6"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="dGE-Bf-X1W"/>
-                                    <barButtonItem title="Item" id="sSP-lL-bNJ"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="S1X-Hb-Cry"/>
+                                    <barButtonItem title="Item" image="arrow.right" catalog="system" id="DCn-Jc-Ot4">
+                                        <connections>
+                                            <action selector="goForwardButtonClicked:" destination="3e6-eW-R5X" id="mYd-xh-YkR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="aQW-Et-u6z"/>
                                 </items>
                             </toolbar>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWT-xe-y7x">
@@ -241,6 +266,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
