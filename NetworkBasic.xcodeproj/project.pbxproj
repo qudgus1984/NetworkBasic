@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FB3140028920CD500523FCA /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB313FF28920CD500523FCA /* ViewPresentableProtocol.swift */; };
+		2FB314022892239900523FCA /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB314012892239900523FCA /* LottoViewController.swift */; };
+		2FB314042892305700523FCA /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB314032892305700523FCA /* TranslateViewController.swift */; };
 		2FD573C32890DD89007DDFF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD573C22890DD89007DDFF0 /* AppDelegate.swift */; };
 		2FD573C52890DD89007DDFF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD573C42890DD89007DDFF0 /* SceneDelegate.swift */; };
 		2FD573C72890DD89007DDFF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD573C62890DD89007DDFF0 /* ViewController.swift */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2FB313FF28920CD500523FCA /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
+		2FB314012892239900523FCA /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
+		2FB314032892305700523FCA /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		2FD573BF2890DD89007DDFF0 /* NetworkBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD573C22890DD89007DDFF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FD573C42890DD89007DDFF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FB313FE28920CA200523FCA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				2FB313FF28920CD500523FCA /* ViewPresentableProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		2FD573B62890DD89007DDFF0 = {
 			isa = PBXGroup;
 			children = (
@@ -62,10 +76,13 @@
 		2FD573C12890DD89007DDFF0 /* NetworkBasic */ = {
 			isa = PBXGroup;
 			children = (
+				2FB313FE28920CA200523FCA /* Protocol */,
 				2FD573C22890DD89007DDFF0 /* AppDelegate.swift */,
 				2FD573C42890DD89007DDFF0 /* SceneDelegate.swift */,
 				2FD573C62890DD89007DDFF0 /* ViewController.swift */,
 				2FD573C82890DD89007DDFF0 /* Main.storyboard */,
+				2FB314032892305700523FCA /* TranslateViewController.swift */,
+				2FB314012892239900523FCA /* LottoViewController.swift */,
 				2FD573D82890E4D2007DDFF0 /* ListTableViewCell.swift */,
 				2FD573D92890E4D2007DDFF0 /* ListTableViewCell.xib */,
 				2FD573D62890E1F7007DDFF0 /* SearchViewController.swift */,
@@ -151,7 +168,10 @@
 				2FD573C72890DD89007DDFF0 /* ViewController.swift in Sources */,
 				2FD573C32890DD89007DDFF0 /* AppDelegate.swift in Sources */,
 				2FD573D72890E1F7007DDFF0 /* SearchViewController.swift in Sources */,
+				2FB314022892239900523FCA /* LottoViewController.swift in Sources */,
 				2FD573C52890DD89007DDFF0 /* SceneDelegate.swift in Sources */,
+				2FB314042892305700523FCA /* TranslateViewController.swift in Sources */,
+				2FB3140028920CD500523FCA /* ViewPresentableProtocol.swift in Sources */,
 				2FD573DA2890E4D2007DDFF0 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
