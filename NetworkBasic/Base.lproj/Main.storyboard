@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fW7-jJ-cTq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3e6-eW-R5X">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -175,6 +175,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbz-JX-o8i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1586.9565217391305" y="65.625"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="lvn-pW-Ecj">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="3e6-eW-R5X" customClass="WebViewController" customModule="NetworkBasic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h6x-XB-BXU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="d9R-Ka-zUu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6qL-AF-vLT"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lo4-yY-G8r">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6Mg-6I-nxx"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="새로고침" id="KyY-lh-zPC"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="kf3-Jm-O4y"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="aQW-Et-u6z"/>
+                                    <barButtonItem title="Item" id="ofx-cR-GFg"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="s5c-Eh-uLl"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="dGE-Bf-X1W"/>
+                                    <barButtonItem title="Item" id="sSP-lL-bNJ"/>
+                                </items>
+                            </toolbar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWT-xe-y7x">
+                                <rect key="frame" x="0.0" y="88" width="414" height="730"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5Xr-xE-OTT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lo4-yY-G8r" firstAttribute="trailing" secondItem="5Xr-xE-OTT" secondAttribute="trailing" id="4KO-B4-Rcu"/>
+                            <constraint firstItem="lo4-yY-G8r" firstAttribute="top" secondItem="hWT-xe-y7x" secondAttribute="bottom" id="5xw-fV-w0A"/>
+                            <constraint firstItem="5Xr-xE-OTT" firstAttribute="trailing" secondItem="hWT-xe-y7x" secondAttribute="trailing" id="6uH-qM-Ido"/>
+                            <constraint firstItem="lo4-yY-G8r" firstAttribute="leading" secondItem="5Xr-xE-OTT" secondAttribute="leading" id="AAM-VK-6g9"/>
+                            <constraint firstItem="d9R-Ka-zUu" firstAttribute="trailing" secondItem="5Xr-xE-OTT" secondAttribute="trailing" id="Amk-XC-0dK"/>
+                            <constraint firstItem="hWT-xe-y7x" firstAttribute="top" secondItem="d9R-Ka-zUu" secondAttribute="bottom" id="Ee4-MC-lLv"/>
+                            <constraint firstItem="d9R-Ka-zUu" firstAttribute="top" secondItem="5Xr-xE-OTT" secondAttribute="top" id="H9f-zx-TDI"/>
+                            <constraint firstItem="5Xr-xE-OTT" firstAttribute="bottom" secondItem="lo4-yY-G8r" secondAttribute="bottom" id="exs-Xq-8kn"/>
+                            <constraint firstItem="hWT-xe-y7x" firstAttribute="leading" secondItem="5Xr-xE-OTT" secondAttribute="leading" id="fy4-fU-uc8"/>
+                            <constraint firstItem="d9R-Ka-zUu" firstAttribute="leading" secondItem="5Xr-xE-OTT" secondAttribute="leading" id="pJQ-hb-JNP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="d9R-Ka-zUu" id="o0C-Af-Tgk"/>
+                        <outlet property="webView" destination="hWT-xe-y7x" id="kda-9Q-awU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lyF-zg-HeG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2461" y="78"/>
         </scene>
     </scenes>
     <resources>

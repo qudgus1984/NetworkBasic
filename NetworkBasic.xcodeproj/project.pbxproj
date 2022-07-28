@@ -10,6 +10,7 @@
 		2FB3140028920CD500523FCA /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB313FF28920CD500523FCA /* ViewPresentableProtocol.swift */; };
 		2FB314022892239900523FCA /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB314012892239900523FCA /* LottoViewController.swift */; };
 		2FB314042892305700523FCA /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB314032892305700523FCA /* TranslateViewController.swift */; };
+		2FB3140628923A9800523FCA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3140528923A9800523FCA /* WebViewController.swift */; };
 		2FD573C32890DD89007DDFF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD573C22890DD89007DDFF0 /* AppDelegate.swift */; };
 		2FD573C52890DD89007DDFF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD573C42890DD89007DDFF0 /* SceneDelegate.swift */; };
 		2FD573C72890DD89007DDFF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD573C62890DD89007DDFF0 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 		2FB313FF28920CD500523FCA /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
 		2FB314012892239900523FCA /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		2FB314032892305700523FCA /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
+		2FB3140528923A9800523FCA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		2FD573BF2890DD89007DDFF0 /* NetworkBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD573C22890DD89007DDFF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FD573C42890DD89007DDFF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				2FD573C42890DD89007DDFF0 /* SceneDelegate.swift */,
 				2FD573C62890DD89007DDFF0 /* ViewController.swift */,
 				2FD573C82890DD89007DDFF0 /* Main.storyboard */,
+				2FB3140528923A9800523FCA /* WebViewController.swift */,
 				2FB314032892305700523FCA /* TranslateViewController.swift */,
 				2FB314012892239900523FCA /* LottoViewController.swift */,
 				2FD573D82890E4D2007DDFF0 /* ListTableViewCell.swift */,
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FD573C72890DD89007DDFF0 /* ViewController.swift in Sources */,
+				2FB3140628923A9800523FCA /* WebViewController.swift in Sources */,
 				2FD573C32890DD89007DDFF0 /* AppDelegate.swift in Sources */,
 				2FD573D72890E1F7007DDFF0 /* SearchViewController.swift in Sources */,
 				2FB314022892239900523FCA /* LottoViewController.swift in Sources */,
