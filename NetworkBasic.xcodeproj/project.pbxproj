@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FAB8BA728935D7B005769B0 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAB8BA628935D7B005769B0 /* LocationViewController.swift */; };
+		2FAB8BAA28938507005769B0 /* KOTRA_BOLD (1).otf in Resources */ = {isa = PBXBuildFile; fileRef = 2FAB8BA928938507005769B0 /* KOTRA_BOLD (1).otf */; };
 		2FB3140028920CD500523FCA /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB313FF28920CD500523FCA /* ViewPresentableProtocol.swift */; };
 		2FB314022892239900523FCA /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB314012892239900523FCA /* LottoViewController.swift */; };
 		2FB314042892305700523FCA /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB314032892305700523FCA /* TranslateViewController.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2FAB8BA628935D7B005769B0 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		2FAB8BA928938507005769B0 /* KOTRA_BOLD (1).otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KOTRA_BOLD (1).otf"; sourceTree = "<group>"; };
 		2FB313FF28920CD500523FCA /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
 		2FB314012892239900523FCA /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		2FB314032892305700523FCA /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FAB8BAB28938571005769B0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2FAB8BA928938507005769B0 /* KOTRA_BOLD (1).otf */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		2FB313FE28920CA200523FCA /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,11 +90,13 @@
 		2FD573C12890DD89007DDFF0 /* NetworkBasic */ = {
 			isa = PBXGroup;
 			children = (
+				2FAB8BAB28938571005769B0 /* Resource */,
 				2FB313FE28920CA200523FCA /* Protocol */,
 				2FD573C22890DD89007DDFF0 /* AppDelegate.swift */,
 				2FD573C42890DD89007DDFF0 /* SceneDelegate.swift */,
 				2FD573C62890DD89007DDFF0 /* ViewController.swift */,
 				2FD573C82890DD89007DDFF0 /* Main.storyboard */,
+				2FAB8BA628935D7B005769B0 /* LocationViewController.swift */,
 				2FB3140528923A9800523FCA /* WebViewController.swift */,
 				2FB314032892305700523FCA /* TranslateViewController.swift */,
 				2FB314012892239900523FCA /* LottoViewController.swift */,
@@ -154,6 +168,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FAB8BAA28938507005769B0 /* KOTRA_BOLD (1).otf in Resources */,
 				2FD573CF2890DD8A007DDFF0 /* LaunchScreen.storyboard in Resources */,
 				2FD573DB2890E4D2007DDFF0 /* ListTableViewCell.xib in Resources */,
 				2FD573CC2890DD8A007DDFF0 /* Assets.xcassets in Resources */,
@@ -173,6 +188,7 @@
 				2FD573C32890DD89007DDFF0 /* AppDelegate.swift in Sources */,
 				2FD573D72890E1F7007DDFF0 /* SearchViewController.swift in Sources */,
 				2FB314022892239900523FCA /* LottoViewController.swift in Sources */,
+				2FAB8BA728935D7B005769B0 /* LocationViewController.swift in Sources */,
 				2FD573C52890DD89007DDFF0 /* SceneDelegate.swift in Sources */,
 				2FB314042892305700523FCA /* TranslateViewController.swift in Sources */,
 				2FB3140028920CD500523FCA /* ViewPresentableProtocol.swift in Sources */,

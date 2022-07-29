@@ -26,6 +26,9 @@ class TranslateViewController: UIViewController {
         userInputTextView.text = textViewPlaceholderText
         userInputTextView.textColor = .lightGray
         
+        userInputTextView.font = UIFont(name: "KOTRA_BOLD-Bold", size: 17)
+
+        
         // 우선권을 부여하는 것 -> 오늘 공부해보기
 //        userInputTextView.resignFirstResponder()
 //        userInputTextView.becomeFirstResponder()
@@ -57,6 +60,8 @@ extension TranslateViewController: UITextViewDelegate {
         if textView.text.isEmpty {
             userInputTextView.text = textViewPlaceholderText
             userInputTextView.textColor = .lightGray
+            
+
         }
     }
     

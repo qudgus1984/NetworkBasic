@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3e6-eW-R5X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fW7-jJ-cTq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -262,7 +262,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lyF-zg-HeG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2461" y="78"/>
+            <point key="canvasLocation" x="2458" y="66"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="ovP-3f-X9B">
+            <objects>
+                <viewController storyboardIdentifier="LocationViewController" id="45v-jK-wbX" customClass="LocationViewController" customModule="NetworkBasic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CND-jo-289">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqd-5S-ts0">
+                                <rect key="frame" x="20" y="64" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6rE-4w-7aq"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Local Notification"/>
+                                <connections>
+                                    <action selector="locationButtonClicked:" destination="45v-jK-wbX" eventType="touchUpInside" id="9c4-F4-L25"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Cqy-Vn-7mG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Cqy-Vn-7mG" firstAttribute="trailing" secondItem="qqd-5S-ts0" secondAttribute="trailing" constant="20" id="17s-H0-lKe"/>
+                            <constraint firstItem="qqd-5S-ts0" firstAttribute="top" secondItem="Cqy-Vn-7mG" secondAttribute="top" constant="20" id="GEZ-fx-Udb"/>
+                            <constraint firstItem="qqd-5S-ts0" firstAttribute="leading" secondItem="Cqy-Vn-7mG" secondAttribute="leading" constant="20" id="iVM-XN-e4F"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QM2-AE-w9C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3355" y="66"/>
         </scene>
     </scenes>
     <resources>
