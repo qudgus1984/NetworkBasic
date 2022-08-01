@@ -12,7 +12,9 @@ import SwiftyJSON
 
 class LottoViewController: UIViewController {
     
-
+    @IBOutlet var lottoNum: [UILabel]!
+    
+    
     @IBOutlet weak var numberTextField: UITextField!
     // @IBOutlet weak var lottoPickerView: UIPickerView!
     var lottoPickerView = UIPickerView()
@@ -27,7 +29,7 @@ class LottoViewController: UIViewController {
         numberTextField.textContentType = .oneTimeCode
         
         numberTextField.inputView = lottoPickerView
-
+        
         lottoPickerView.delegate = self
         lottoPickerView.dataSource = self
         
@@ -38,7 +40,7 @@ class LottoViewController: UIViewController {
         
         //AF: 200~299 status code
         let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(number)"
-        AF.request(url, method: .get).validate().responseJSON { response in
+        AF.request(url, method: .get).validate().responseJSON { [self] response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -47,10 +49,26 @@ class LottoViewController: UIViewController {
                 let bonus = json["bnusNo"].intValue
                 print(bonus)
                 
+                
                 let date = json["drwNoDate"].stringValue
                 print(date)
                 
                 self.numberTextField.text = date
+                
+                for i in 1...7 {
+                    switch i {
+                    case 1...6 :
+                        let lottoNumber = json["drwtNo\(i)"].stringValue
+                        lottoNum[i-1].text = "\(lottoNumber)"
+                    case 7:
+                        let lottoNumber = json["bnusNo"].stringValue
+                        lottoNum[6].text = "\(lottoNumber)"
+                    default:
+                        print("error")
+                    }
+
+                }
+                
                 
             case .failure(let error):
                 print(error)
@@ -58,7 +76,8 @@ class LottoViewController: UIViewController {
         }
     }
     
-
+    
+    
     @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
@@ -76,14 +95,15 @@ extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         requestLotto(number: numberList[row])
-//        numberTextField.text = "\(numberList[row])회차"
+        //        numberTextField.text = "\(numberList[row])회차"
         view.endEditing(true)
-
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return "\(numberList[row])회차"
     }
+    
     
 }
 
