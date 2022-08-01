@@ -55,6 +55,7 @@ class LottoViewController: UIViewController {
                 
                 self.numberTextField.text = date
                 
+                // Label에 각자의 로또 당첨번호 출력
                 for i in 1...7 {
                     switch i {
                     case 1...6 :
