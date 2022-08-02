@@ -42,11 +42,12 @@ class TranslateViewController: UIViewController {
     
     func requestTranslateData() {
         let url = EndPoint.translateURL
-        
-        let parameter = ["source": "korea", "target": "en", "text": "안녕하세요 저는 고래밥입니다."]
+        var translatetext = self.userInputTextView.text ?? textViewPlaceholderText
+
+        var parameter = ["source": "ko", "target": "en", "text": "\(translatetext)"]
         
         let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
-        
+
         AF.request(url, method: .post, parameters: parameter , headers: header).validate(statusCode: 200...500).responseJSON { response in
             switch response.result {
             case .success(let value):
@@ -55,17 +56,20 @@ class TranslateViewController: UIViewController {
                 
                 let statusCode = response.response?.statusCode ?? 500
                 
+                
                 if statusCode == 200 {
-                    
+                    parameter.updateValue(translatetext, forKey: "text")
                 } else {
                     self.userInputTextView.text = json["errorMessage"].stringValue
                 }
+                
+                let translatedtext = json["message"]["result"]["translatedText"].stringValue
+                self.translateLabel.text = translatedtext
                 
             case .failure(let error):
                 print(error)
                 
             }
-            
         }
     }
 }
