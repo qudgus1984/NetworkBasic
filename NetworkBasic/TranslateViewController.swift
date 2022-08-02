@@ -7,6 +7,9 @@
 
 import UIKit
 
+import Alamofire
+import SwiftyJSON
+
 class TranslateViewController: UIViewController {
     
     //UIButton, UITextField > Action
@@ -15,32 +18,65 @@ class TranslateViewController: UIViewController {
     //UIResponderChain > resignFirstResponder() > becomeFirstResponder()
     
     @IBOutlet weak var userInputTextView: UITextView!
+    @IBOutlet weak var translateLabel: UILabel!
     
     let textViewPlaceholderText = "번역하고 싶은 문장을 작성해보세요."
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         userInputTextView.delegate = self
         
         userInputTextView.text = textViewPlaceholderText
         userInputTextView.textColor = .lightGray
         
         userInputTextView.font = UIFont(name: "KOTRA_BOLD-Bold", size: 17)
-
+        
+        requestTranslateData()
         
         // 우선권을 부여하는 것 -> 오늘 공부해보기
-//        userInputTextView.resignFirstResponder()
-//        userInputTextView.becomeFirstResponder()
+        //        userInputTextView.resignFirstResponder()
+        //        userInputTextView.becomeFirstResponder()
         
     }
     
+    func requestTranslateData() {
+        let url = EndPoint.translateURL
+        
+        let parameter = ["source": "korea", "target": "en", "text": "안녕하세요 저는 고래밥입니다."]
+        
+        let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
+        
+        AF.request(url, method: .post, parameters: parameter , headers: header).validate(statusCode: 200...500).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+                
+                let statusCode = response.response?.statusCode ?? 500
+                
+                if statusCode == 200 {
+                    
+                } else {
+                    self.userInputTextView.text = json["errorMessage"].stringValue
+                }
+                
+            case .failure(let error):
+                print(error)
+                
+            }
+            
+        }
+    }
 }
+
+
 
 extension TranslateViewController: UITextViewDelegate {
     // 텍스트뷰의 텍스트가 변할 때마다 호출
     func textViewDidChange(_ textView: UITextView) {
         print(textView.text.count)
+        requestTranslateData()
     }
     
     // 편집이 시작될 때 -> 커서가 깜빡이기 시작할 때
@@ -61,7 +97,7 @@ extension TranslateViewController: UITextViewDelegate {
             userInputTextView.text = textViewPlaceholderText
             userInputTextView.textColor = .lightGray
             
-
+            
         }
     }
     

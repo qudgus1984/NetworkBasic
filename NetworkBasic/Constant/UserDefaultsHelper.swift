@@ -15,21 +15,17 @@ class UserDefaultsHelper {
     // singleton pattern 자기 자신의 인스턴스를 타입 프로퍼티 형태로 가지고 있음
     
     let userDefault = UserDefaults.standard
-    
     enum Key: String {
         case nickname, age
     }
-    
     var nickname: String {
         get {
-            
             return userDefault.string(forKey: Key.nickname.rawValue) ?? "대장"
         }
         set { // 연산 프로퍼티 parameter
             userDefault.set(newValue, forKey: Key.nickname.rawValue)
         }
     }
-    
     var age: Int {
         get {
             return userDefault.integer(forKey: Key.age.rawValue)

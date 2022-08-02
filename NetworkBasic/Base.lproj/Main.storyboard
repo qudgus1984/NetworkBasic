@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="av9-ST-F5V">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -42,6 +42,7 @@
                     </view>
                     <connections>
                         <outlet property="searchTableView" destination="zzy-iz-aeM" id="DsZ-DP-inm"/>
+                        <outlet property="searhBar" destination="P6m-mH-00n" id="15X-W0-nCD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -175,6 +176,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p78-Yj-i8y">
+                                <rect key="frame" x="20" y="662" width="374" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="CKm-AS-2qA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IZZ-XV-B3s"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -182,9 +192,13 @@
                             <constraint firstItem="iq3-cJ-Etc" firstAttribute="top" secondItem="IZZ-XV-B3s" secondAttribute="top" constant="50" id="ak4-vM-mVU"/>
                             <constraint firstItem="iq3-cJ-Etc" firstAttribute="leading" secondItem="IZZ-XV-B3s" secondAttribute="leading" constant="20" id="gGT-b9-mjv"/>
                             <constraint firstItem="IZZ-XV-B3s" firstAttribute="trailing" secondItem="iq3-cJ-Etc" secondAttribute="trailing" constant="20" id="lgN-Rh-9Lx"/>
+                            <constraint firstItem="IZZ-XV-B3s" firstAttribute="bottom" secondItem="p78-Yj-i8y" secondAttribute="bottom" constant="20" id="mg6-eW-Ie9"/>
+                            <constraint firstItem="p78-Yj-i8y" firstAttribute="leading" secondItem="IZZ-XV-B3s" secondAttribute="leading" constant="20" id="waF-gh-3X4"/>
+                            <constraint firstItem="IZZ-XV-B3s" firstAttribute="trailing" secondItem="p78-Yj-i8y" secondAttribute="trailing" constant="20" id="x4H-zl-mMj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="translateLabel" destination="p78-Yj-i8y" id="RsY-8P-EuY"/>
                         <outlet property="userInputTextView" destination="iq3-cJ-Etc" id="mrz-b2-QJ9"/>
                     </connections>
                 </viewController>
