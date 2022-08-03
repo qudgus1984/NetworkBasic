@@ -7,6 +7,19 @@
 
 import Foundation
 
+struct APIKey {
+    static let BOXOFFICE = "ed5188d191b44830a2133865842b6868"
+    
+    static let NAVER_ID = "TpdLORQVA8Bfw8bRbqzc"
+    static let NAVER_SECRET = "7_dE4QmrJQ"
+}
+
+struct EndPoint {
+    static let boxOfficeURL = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?"
+    static let lottoURL = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber"
+    static let translateURL = "https://openapi.naver.com/v1/papago/n2mt"
+    static let imageSearchURL = "https://openapi.naver.com/v1/search/image.json?"
+}
 //enum StoryboardName: String {
 //    case Main
 //    case Search
