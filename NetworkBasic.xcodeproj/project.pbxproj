@@ -26,6 +26,8 @@
 		2FB314042892305700523FCA /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB314032892305700523FCA /* TranslateViewController.swift */; };
 		2FB3140628923A9800523FCA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3140528923A9800523FCA /* WebViewController.swift */; };
 		2FD3176D289A094300882863 /* ImageSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3176C289A094300882863 /* ImageSearchViewController.swift */; };
+		2FD3177A289ADF2F00882863 /* ImageViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD31779289ADF2F00882863 /* ImageViewCollectionViewCell.swift */; };
+		2FD3177E289ADF6D00882863 /* ImageViewCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3177D289ADF6D00882863 /* ImageViewCollectionViewController.swift */; };
 		2FD573C32890DD89007DDFF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD573C22890DD89007DDFF0 /* AppDelegate.swift */; };
 		2FD573C52890DD89007DDFF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD573C42890DD89007DDFF0 /* SceneDelegate.swift */; };
 		2FD573C72890DD89007DDFF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD573C62890DD89007DDFF0 /* ViewController.swift */; };
@@ -54,6 +56,8 @@
 		2FB314032892305700523FCA /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		2FB3140528923A9800523FCA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		2FD3176C289A094300882863 /* ImageSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchViewController.swift; sourceTree = "<group>"; };
+		2FD31779289ADF2F00882863 /* ImageViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		2FD3177D289ADF6D00882863 /* ImageViewCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCollectionViewController.swift; sourceTree = "<group>"; };
 		2FD573BF2890DD89007DDFF0 /* NetworkBasic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkBasic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD573C22890DD89007DDFF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FD573C42890DD89007DDFF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +130,13 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		2FD3177C289ADF4D00882863 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		2FD573B62890DD89007DDFF0 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +156,7 @@
 		2FD573C12890DD89007DDFF0 /* NetworkBasic */ = {
 			isa = PBXGroup;
 			children = (
+				2FD3177C289ADF4D00882863 /* Image */,
 				2FAB688528992913005B4682 /* BeerCollectionView */,
 				2FA6C4BE2897BC6200F2884F /* Beer */,
 				2FA6C4AF2897578300F2884F /* Constant */,
@@ -154,6 +166,8 @@
 				2FD573C42890DD89007DDFF0 /* SceneDelegate.swift */,
 				2FD573C62890DD89007DDFF0 /* ViewController.swift */,
 				2FD573C82890DD89007DDFF0 /* Main.storyboard */,
+				2FD31779289ADF2F00882863 /* ImageViewCollectionViewCell.swift */,
+				2FD3177D289ADF6D00882863 /* ImageViewCollectionViewController.swift */,
 				2FD3176C289A094300882863 /* ImageSearchViewController.swift */,
 				2FAB8BA628935D7B005769B0 /* LocationViewController.swift */,
 				2FB3140528923A9800523FCA /* WebViewController.swift */,
@@ -255,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FD3177A289ADF2F00882863 /* ImageViewCollectionViewCell.swift in Sources */,
 				2FD573C72890DD89007DDFF0 /* ViewController.swift in Sources */,
 				2FA6C4B528975FF500F2884F /* UserDefaultsHelper.swift in Sources */,
 				2FA6C4C02897BC7500F2884F /* BeerViewController.swift in Sources */,
@@ -273,6 +288,7 @@
 				2FAB68892899296B005B4682 /* BeerCollectionViewController.swift in Sources */,
 				2FAB688B2899297C005B4682 /* BeerCollectionViewCell.swift in Sources */,
 				2FA6C4B12897579800F2884F /* Constant.swift in Sources */,
+				2FD3177E289ADF6D00882863 /* ImageViewCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
