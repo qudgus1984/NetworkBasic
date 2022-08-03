@@ -17,29 +17,7 @@ class ImageViewCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var searchImageView: UIImageView!
     
-    func fetchImageCell() {
-        let text = "과자".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        let url = EndPoint.imageSearchURL + "query=\(text)&display=30&start=1"
-        
-        let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
-        
-        AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseJSON { [self] response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                
-                
-                let image = URL(string: json[0][17]["thumbnail"].stringValue)
-                searchImageView.kf.setImage(with: image)
-                
-                
-            case .failure(let error):
-                print(error)
-                
-            }
-        }
-    }
+   
 //    func beerCell() {
 //        let url = "https://api.punkapi.com/v2/beers/random"
 //        AF.request(url, method: .get).validate().responseJSON { [self] response in
