@@ -9,6 +9,7 @@ import UIKit
 
 import Alamofire
 import SwiftyJSON
+import JGProgressHUD
 
 /*
  Swift Protocol
@@ -51,6 +52,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     // BoxOffice 배열
     var list: [BoxOfficeModel] = []
+    //ProgressView
+    let hud = JGProgressHUD()
 
     // 타입 어노테이션 vs 타입 추론
     var nickname: String = ""
@@ -94,10 +97,11 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func requestBoxOffice(text: String) {
 
+        hud.show(in: view)
         self.list.removeAll()
 
         let url = "\(EndPoint.boxOfficeURL)key=\(APIKey.BOXOFFICE)&targetDt=\(text)"
-        AF.request(url, method: .get).validate().responseJSON { response in
+        AF.request(url, method: .get).validate().responseData { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -121,6 +125,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
                 // 테이블뷰 갱신
                 self.searchTableView.reloadData()
+                self.hud.dismiss()
 
             case .failure(let error):
                 print(error)

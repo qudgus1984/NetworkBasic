@@ -31,7 +31,7 @@ class ImageSearchViewController: UIViewController {
                 
         let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
 
-        AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseJSON { response in
+        AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseData { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
