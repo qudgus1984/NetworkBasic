@@ -23,6 +23,7 @@
 		2FAB8BA728935D7B005769B0 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAB8BA628935D7B005769B0 /* LocationViewController.swift */; };
 		2FAB8BAA28938507005769B0 /* KOTRA_BOLD (1).otf in Resources */ = {isa = PBXBuildFile; fileRef = 2FAB8BA928938507005769B0 /* KOTRA_BOLD (1).otf */; };
 		2FADA232289B506D0098EFB4 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 2FADA231289B506D0098EFB4 /* JGProgressHUD */; };
+		2FAE33AC289CB40200C6E131 /* ImageSearchAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAE33AB289CB40200C6E131 /* ImageSearchAPIManager.swift */; };
 		2FB3140028920CD500523FCA /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB313FF28920CD500523FCA /* ViewPresentableProtocol.swift */; };
 		2FB314022892239900523FCA /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB314012892239900523FCA /* LottoViewController.swift */; };
 		2FB314042892305700523FCA /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB314032892305700523FCA /* TranslateViewController.swift */; };
@@ -54,6 +55,7 @@
 		2FAB688A2899297C005B4682 /* BeerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewCell.swift; sourceTree = "<group>"; };
 		2FAB8BA628935D7B005769B0 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		2FAB8BA928938507005769B0 /* KOTRA_BOLD (1).otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KOTRA_BOLD (1).otf"; sourceTree = "<group>"; };
+		2FAE33AB289CB40200C6E131 /* ImageSearchAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchAPIManager.swift; sourceTree = "<group>"; };
 		2FB313FF28920CD500523FCA /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
 		2FB314012892239900523FCA /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		2FB314032892305700523FCA /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,14 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		2FAE33AA289CB3D500C6E131 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				2FAE33AB289CB40200C6E131 /* ImageSearchAPIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
 		2FB313FE28920CA200523FCA /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +170,7 @@
 		2FD573C12890DD89007DDFF0 /* NetworkBasic */ = {
 			isa = PBXGroup;
 			children = (
+				2FAE33AA289CB3D500C6E131 /* APIManager */,
 				2FD3177C289ADF4D00882863 /* Image */,
 				2FAB688528992913005B4682 /* BeerCollectionView */,
 				2FA6C4BE2897BC6200F2884F /* Beer */,
@@ -296,6 +307,7 @@
 				2FA92DA8289AEB5A00930495 /* imageModel.swift in Sources */,
 				2FAB688B2899297C005B4682 /* BeerCollectionViewCell.swift in Sources */,
 				2FA6C4B12897579800F2884F /* Constant.swift in Sources */,
+				2FAE33AC289CB40200C6E131 /* ImageSearchAPIManager.swift in Sources */,
 				2FD3177E289ADF6D00882863 /* ImageViewCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

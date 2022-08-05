@@ -69,38 +69,45 @@ class ImageViewCollectionViewController: UICollectionViewController {
     
     
     func fetchImage(query: String) {
-        let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        let url = EndPoint.imageSearchURL + "query=\(text)&display=30&start=\(startPage)"
-        
-        let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
-        
-        AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseData {  response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                
-                self.totalCount = json["total"].intValue
-                
-                
-                for image in json["items"].arrayValue {
-                    
-                    //셀에서 URL, UIImage 변환을 할 건지
-                    //서버통신받는 시점에서 URL, UIImage 변환을 할 건지 -> 시간 오래걸림
-                    
-                    let imageUrl = image["thumbnail"].stringValue
-                    
-                    let data = imageModel(imageUrl: imageUrl)
-                    
-                    self.list.append(data)
-                }
-                
-                self.collectionView.reloadData()
-                
-            case .failure(let error):
-                print(error)
-            }
+        ImageSearchAPIManager.shared.fetchImageData(query: query, startPage: startPage) { totalCount, list in
+            self.totalCount = totalCount
+//            self.list.append(contentsOf: list)
+            self.collectionView.reloadData()
         }
+//        let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+//        let url = EndPoint.imageSearchURL + "query=\(text)&display=30&start=\(startPage)"
+//
+//        let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
+//
+//        AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseData {  response in
+//            switch response.result {
+//            case .success(let value):
+//                let json = JSON(value)
+//                print("JSON: \(json)")
+//
+//                self.totalCount = json["total"].intValue
+//
+//
+//                for image in json["items"].arrayValue {
+//
+//                    //셀에서 URL, UIImage 변환을 할 건지
+//                    //서버통신받는 시점에서 URL, UIImage 변환을 할 건지 -> 시간 오래걸림
+//
+//                    let imageUrl = image["thumbnail"].stringValue
+//
+//                    let data = imageModel(imageUrl: imageUrl)
+//
+//                    self.list.append(data)
+//                }
+////                let data = imageModel(imageUrl: json["items"].arrayValue.map { $0["thumbnail"].stringValue })
+//
+//
+//                self.collectionView.reloadData()
+//
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
         
     }
 }
